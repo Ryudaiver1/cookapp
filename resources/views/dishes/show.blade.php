@@ -12,7 +12,7 @@
             {{ $dish->title }}
         </h1>
         <p class="edit">[<a href="/dishes/{{ $dish->id }}/edit">edit</a>]</p>
-        <form action="/dishes/{{ $dish->id }}" id="form_{{ $dish->id }}" method="dish">
+        <form action="/dishes/{{ $dish->id }}" id="form_{{ $dish->id }}" method="post">
             @csrf
             @method('DELETE')
             <button type="button" onclick="deleteDish({{ $dish->id }})">delete</button> 
@@ -20,6 +20,7 @@
         <script>
             function deleteDish(id) {
                 'use strict'
+                
                 if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
                     document.getElementById(`form_${id}`).submit();
                 }

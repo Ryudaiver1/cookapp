@@ -41,9 +41,9 @@ class DishController extends Controller
         return redirect('/dishes/' . $dish->id);
     }
     
-    public function delete(Post $post)
+    public function delete(Dish $dish)
     {
-        $post->delete();
+        $dish->delete();
         return redirect('/');
     }
 

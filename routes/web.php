@@ -20,3 +20,4 @@ Route::post('/dishes', [DishController::class, 'store']);
 Route::get('/dishes/{dish}', [DishController::class, 'show']);
 Route::get('/dishes/{dish}/edit', [DishController::class, 'edit']);
 Route::put('/dishes/{dish}', [DishController::class, 'update']);
+Route::delete('/dishes/{dish}', [DishController::class, 'delete']);
