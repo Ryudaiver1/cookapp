@@ -13,7 +13,15 @@
                 <input type="text" name="dish[title]" placeholder="タイトル"/>
                 <p class="title__error" style="color:red">{{ $errors->first('dish.title') }}</p>
             </div>
-            <input type="submit" value="保存"/>
+            <duv class="category">
+                <h2>Category</h2>
+                <select name="dish[category_id]">
+                    @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
+            </duv>
+            <input type="submit" value="store"/>
         </form>
         <div class="back">[<a href="/">back</a>]</div>
     </body>

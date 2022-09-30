@@ -9,6 +9,8 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        Paginator::useBootstrap();
+        \URL::forceScheme('https');
+        //Paginator::useBootstrap();
     }
 }
+

@@ -26,6 +26,7 @@
                 }
             }
         </script>
+        <a href="">{{ $dish->category->name }}</a>
         <div class="footer">
             <a href="/">戻る</a>
         </div>

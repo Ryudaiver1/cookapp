@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dish;
 use App\Http\Requests\DishRequest;
+use App\Models\Category;
 
 class DishController extends Controller
 {
@@ -17,9 +18,9 @@ class DishController extends Controller
         return view('dishes/show')->with(['dish' => $dish]);
     }
     
-    public function create()
+    public function create(Category $category)
     {
-        return view('dishes/create');
+        return view('dishes/create')->with(['categories' => $category->get()]);
     }
     
     public function store(Dish $dish, DishRequest $request)
